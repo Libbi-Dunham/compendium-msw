@@ -1,9 +1,9 @@
 import { getCharacters, getStatus } from './services/characters';
 import { useEffect, useState } from 'react';
-import Header from './Components/Header/Header';
 import Controls from './Components/Controls/Controls';
 import './App.css';
 import CharacterList from './Components/CharacterList/CharacterList';
+import Header from './Header/Header';
 
 function App() {
   const [character, setCharacter] = useState([]);
@@ -19,13 +19,13 @@ function App() {
     fetchData();
   }, [query, selectedType]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const charactersData = await getStatus();
-      setStatus(charactersData);
-    };
-    fetchData();
-  });
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const charactersData = await getStatus();
+  //     setStatus(charactersData);
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <div className="App">
