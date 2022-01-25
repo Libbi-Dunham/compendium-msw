@@ -1,15 +1,17 @@
 import React from 'react';
 
-export default function CharacterList({ character }) {
-  console.log('characters', character);
+export default function CharacterList({ filterCharacters }) {
+  console.log('characters', filterCharacters);
   return (
     <div className="list">
-      {character.map((char) => (
+      {filterCharacters.map((char) => (
         <p className="char" key={char.id}>
           {char.character}
           {/* <img src={char.url_image}></img> */}
+          Name: {char.name}
+          Species: {char.species}
           <br></br>
-          Type: {char.type}
+          Gender: {char.gender}
           <br></br>
           Status: {char.status}
         </p>

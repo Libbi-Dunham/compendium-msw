@@ -1,4 +1,4 @@
-import { getCharacters, getStatus } from './services/characters';
+import { getCharacters } from './services/characters';
 import { useEffect, useState } from 'react';
 import Controls from './Components/Controls/Controls';
 import './App.css';
@@ -9,35 +9,36 @@ function App() {
   const [character, setCharacter] = useState([]);
   const [query, setQuery] = useState('');
   const [selectedType, setSelectedType] = useState('all');
-  const [status, setStatus] = useState([]);
+  const [loading, setLoading] = useState(true);
+  // const [status, setStatus] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const charactersData = await getCharacters(query, selectedType);
       setCharacter(charactersData.results);
+      setLoading(false);
     };
-    fetchData();
-  }, [query, selectedType]);
+    2000;
+    if (loading) {
+      fetchData();
+    }
+  }, [query, selectedType, loading]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const charactersData = await getStatus();
-  //     setStatus(charactersData);
-  //   };
-  //   fetchData();
-  // }, []);
+  const filterCharacters = character.filter(
+    (character) => character.name.toLowerCase().includes(query) || character.name.includes(query)
+  );
 
   return (
     <div className="App">
       <Header />
       <Controls
-        query={setQuery}
+        query={query}
         setQuery={setQuery}
-        status={status}
+        // status={status}
         selectedType={selectedType}
         setSelectedType={setSelectedType}
       />
-      <CharacterList character={character} />
+      <CharacterList character={character} filterCharacters={filterCharacters} />
     </div>
   );
 }
