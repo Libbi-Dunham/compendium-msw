@@ -6,7 +6,8 @@ export default function CharacterList({ filterCharacters }) {
       {filterCharacters.map((char) => (
         <p className="char" key={char.id}>
           {char.character}
-          <img src={char.image}></img>
+          <img alt={char.name} src={char.image}></img>
+          <br></br>
           Name: {char.name}
           <br></br>
           Species: {char.species}
