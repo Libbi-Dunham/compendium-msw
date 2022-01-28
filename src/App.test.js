@@ -22,4 +22,6 @@ test('renders the search bar', async () => {
   const characterName = 'Rick';
 
   userEvent.type(searchBar, characterName);
+
+  expect(searchBar).toBeInTheDocument();
 });
