@@ -1,7 +1,7 @@
 export const user = [
   {
     id: 1,
-    name: 'Mock',
+    name: 'Rick Sanchez',
     status: 'Alive',
     species: 'Human',
     type: '',

@@ -1,6 +1,19 @@
 .App {
   text-align: center;
   background-color: #cb9cf2;
+  font-family: 'ClickuperRegular';
+  font-weight: bold;
+  font-style: normal;
+}
+
+img {
+  border-radius: 50px;
+  border: 6px solid black;
+}
+
+input {
+  border-radius: 50px;
+  background-color: #50ffb1;
 }
 
 .App-logo {
