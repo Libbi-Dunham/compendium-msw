@@ -5,6 +5,7 @@ import { user } from './data/data';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 // comment
+//comment
 const server = setupServer(
   rest.get('https://rickandmortyapi.com/api/character', (req, res, ctx) => {
     return res(ctx.json({ results: user }));
