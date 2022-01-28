@@ -12,14 +12,14 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const charactersData = await getCharacters(query);
+      const charactersData = await getCharacters();
       setCharacter(charactersData.results);
       setLoading(false);
     };
     {
       fetchData();
     }
-  }, [query]);
+  }, []);
 
   if (loading) return <p> Loading </p>;
 

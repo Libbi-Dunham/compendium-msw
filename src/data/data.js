@@ -1,4 +1,4 @@
-export const user = [
+export const characters = [
   {
     id: 1,
     name: 'Rick Sanchez',
