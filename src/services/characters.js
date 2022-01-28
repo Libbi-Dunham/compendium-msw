@@ -7,5 +7,6 @@ export async function getCharacters(query, selectedType) {
   }
   const response = await fetch(`https://rickandmortyapi.com/api/character`);
   const charactersData = await response.json();
+  console.log('DATA', charactersData);
   return charactersData;
 }
