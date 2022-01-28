@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 // import { setupServer } from 'msw/lib/types/node';
 // import { user } from '../../data/data';
 import App from '../../App';
+//comment
 
 // const server = setupServer(
 //   'https://rickandmortyapi.com/api/character/rest/v1/users',
